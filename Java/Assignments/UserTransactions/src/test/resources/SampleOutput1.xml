@@ -1,0 +1,17 @@
+<Result>
+	<AverageTransaction>15.93</AverageTransaction>
+	<Customers>
+		<Customer>
+			<Username>JON</Username>
+			<AverageTransaction>15.80</AverageTransaction>
+		</Customer>
+		<Customer>
+			<Username>JEREMY</Username>
+			<AverageTransaction>13.40</AverageTransaction>
+		</Customer>
+		<Customer>
+			<Username>JESSE</Username>
+			<AverageTransaction>18.60</AverageTransaction>
+		</Customer>
+	</Customers>
+</Result>

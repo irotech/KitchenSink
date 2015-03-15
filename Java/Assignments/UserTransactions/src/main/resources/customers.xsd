@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="2.0.1" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	jaxb:version="2.0" 
+	elementFormDefault="qualified">
+	<xs:element name="Customers" type="Customers">
+		<xs:annotation>
+			<xs:documentation>Root, list of customer</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Customers">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="Customer" type="Customer" nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Customer">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" ref="Username" />
+			<xs:element minOccurs="0" maxOccurs="1" name="Transactions" type="Transactions" nillable="true" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Username" type="NotEmptyString"  nillable="false">
+		<xs:annotation>
+			<xs:documentation>not null customer username</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Transactions">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" ref="Item" />
+		</xs:sequence>
+	</xs:complexType>
+		<xs:element name="Item" type="xs:int" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Value of current transaction (Use xs:integer for BigInteger or xs:decimal for float)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="NotEmptyString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
