@@ -1,0 +1,2 @@
+[aliases]
+deleted = log --diff-filter=D --summary

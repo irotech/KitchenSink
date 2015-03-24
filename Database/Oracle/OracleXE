@@ -1,0 +1,11 @@
+# OracleXE local configuration
+
+# Installation
+
+# Configuration
+
+	# Connect as SYS
+	connect SYS/<pass> as SYSDBA
+
+	# Modify the HTTP post used by Admin Tool
+	EXEC DBMS_XDB.SETHTTPPORT(8081);
