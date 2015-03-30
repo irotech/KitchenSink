@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.gmail.at.irotech</groupId>
+  <artifactId>spring-boot</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>spring-boot</name>
+  
+  <modules>
+    <module>simple-spring-boot</module>
+    <module>embedded-tomcat-spring-boot</module>
+  	<module>embedded-database-spring-boot</module>
+  </modules>
+  
+</project>
