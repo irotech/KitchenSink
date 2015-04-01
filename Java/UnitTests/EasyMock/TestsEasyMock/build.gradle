@@ -1,0 +1,39 @@
+buildscript {
+	ext {
+	}
+    repositories {
+        maven { url "http://repo.spring.io/libs-snapshot" }
+        mavenLocal()
+    }
+    dependencies {
+    	compile 'junit:junit:4.12'
+		compile 'org.easymock:easymock:3.3.1'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+ext {
+	easyMockVersion = '1'
+	junitVersion = '2'
+}
+
+sourceSets {
+	test {
+		purpose = 'test'
+	}
+}
+
+dependencies {
+}
+
+task printProperties << {
+	println easyMockVersion
+	println junitVersion
+	sourceSets.matching { }
+}
