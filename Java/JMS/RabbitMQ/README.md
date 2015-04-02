@@ -16,6 +16,16 @@ Windows
 	* Try to access into the console http://localhost:15672/ 
 		user:	guest
 		pass:	guest
+	* <path>\rabbitmq_server-3.5.0\sbin>rabbitmqctl.bat start_app
+	* <path>\rabbitmq_server-3.5.0\sbin>rabbitmqctl.bat status
+	* <path>\rabbitmq_server-3.5.0\sbin>rabbitmq-server.bat start
+    				RabbitMQ 3.5.0. Copyright (C) 2007-2014 GoPivotal, Inc.
+ 		##  ##      Licensed under the MPL.  See http://www.rabbitmq.com/
+  		##  ##
+  		##########  
+  		######  ##
+  		##########
+              		Starting broker... completed with 6 plugins.
 
 Linux
 
