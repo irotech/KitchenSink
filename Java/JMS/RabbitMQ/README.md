@@ -1,0 +1,22 @@
+# RabbitMQ notes
+
+Installation
+
+Windows
+	* Download and install Erlang (www.erlang.org/download/otp_win64_17.4.exe)
+	* Donwload and install Rabbitmq-server (www.rabbitmq.com/releases/rabbitmq-server/v3.5.0/rabbitmq-server-3.5.0.exe)
+	* Run, as administrator, the command \rabbitmq_server-3.5.0\sbin>rabbitmq-plugins.bat enable rabbitmq_management
+		The following plugins have been enabled:
+		mochiweb
+		webmachine
+		rabbitmq_web_dispatch
+		amqp_client
+		rabbitmq_management_agent
+		rabbitmq_management
+	* Try to access into the console http://localhost:15672/ 
+		user:	guest
+		pass:	guest
+
+Linux
+
+OsX
