@@ -1,0 +1,14 @@
+# List of useful git commands
+
+# add to index new files
+
+# remove (unstage) files from index before commit
+git rm -r --cached <file_path OR files_path_list OR files_path_placeholder>
+
+# revert deleted file before pushing
+
+# revert deleted file after pushing
+
+# merge origin into feature branch
+
+# merge feature branch into origin
