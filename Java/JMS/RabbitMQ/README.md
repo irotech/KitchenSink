@@ -26,6 +26,10 @@ Windows
   		######  ##
   		##########
               		Starting broker... completed with 6 plugins.
+    * Reset the server (needs the service started)
+    	<path>\rabbitmq_server-3.5.0\sbin>rabbitmqctl.bat stop_app
+    	<path>\rabbitmq_server-3.5.0\sbin>rabbitmqctl.bat reset
+    	<path>\rabbitmq_server-3.5.0\sbin>rabbitmqctl.bat start_app
 
 Linux
 
