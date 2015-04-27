@@ -1,13 +1,31 @@
-# List of useful git commands
+-- Git useful_commands --
 
-# add to index new files
+* Git/Bitbucket from scratch
+	mkdir /path/to/project && cd /path/to/project
+	git init
+	git remote add origin https|ssh://user@github.com|bitbucket.org/username/project.git
+
+* Add code to newly repo
+	cd /path/to/project
+	git remote add origin https|ssh://user@github.com|bitbucket.org/username/project.git
+	git push -u origin --all
+
+* add to index new files
+	cd /path/to/project
+	git add path/to/file1 path/to/file2 ..
 
 # remove (unstage) files from index before commit
 git rm -r --cached <file_path OR files_path_list OR files_path_placeholder>
 
-# revert deleted file before pushing
+# revert deleted file before commit/pushing
+git reset --hard HEAD
 
 # revert deleted file after pushing
+
+# revert singolar commit
+git log (identify the hash of the commit you want to revert)
+git revert ba351d4bd0874a3697aeae73b98716fafb8d7960
+set, or leave the standard one, the commit message on the commit-editmsg and exit saving ':wq'
 
 # merge origin into feature branch
 
