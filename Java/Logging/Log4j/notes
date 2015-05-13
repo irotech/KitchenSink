@@ -1,0 +1,6 @@
+-- Log4j notes --
+
+* Skip [DefaultSizeOfEngine ] [..] using Agent sizeof engine
+	<logger name="net.sf.ehcache.pool.impl.DefaultSizeOfEngine" additivity="false">
+        <level value="OFF" />
+    </logger>
