@@ -1,8 +1,5 @@
 package com.gmail.at.irotech.ehcache.beans.entities;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,8 +8,6 @@ import java.io.Serializable;
 public class CacheEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-//    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Id
     @Column(name = "ID", unique = true, nullable = false)
