@@ -6,6 +6,7 @@ import net.sf.ehcache.CacheManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.cache.annotation.Cacheable;
 
 import java.util.Arrays;
@@ -37,6 +38,11 @@ public class CacheService implements ICacheService {
             final Cache cachedElement = cacheManager.getCache("cacheVOValue");
             cachedElement.remove(cacheVO.getId());
         }
+    }
+
+//    @Required
+    public CacheManager getCacheManager() {
+        return cacheManager;
     }
 
 }
