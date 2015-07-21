@@ -1,0 +1,22 @@
+-- Oracle useful_commands --
+
++-+-+ CONTENT TABLE
++ Switching to a Different Schema
++ Title 2
++-+-+
+
++-+-+
++ Switching to a Different Schema
++-+-+
+	Instead of execute synonyms for each query
+	e.g. SELECT * FROM COMPANYSCHEMA.TABLE_NAME; 
+	it's possible to set the default schema with the command:
+
+	ALTER SESSION SET CURRENT_SCHEMA = COMPANYSCHEMA;
+
+	After that it's possible to execute queries without synonyms
+	e.g. SELECT * FROM TABLE_NAME;
+
++-+-+
++ title 2
++-+-+
