@@ -13,6 +13,8 @@
 + Merge origin into feature branch
 + Merge feature branch into origin
 + Investigate changes on a particular file
++ Create and push tag
++ Update local master branch, merge and push into feature branch
 +-+-+
 
 +-+-+
@@ -59,7 +61,7 @@
 +-+-+
 + Revert singolar commit
 +-+-+
-
+	git commit -m "my commit message"
 
 +-+-+
 + Revert singolar commit
@@ -88,3 +90,18 @@
 + Investigate changes on a particular file
 +-+-+ 
 	git log -- [file path] eg. git log -- project-name/src/main/com/gmail/at/irotech/web/controllers/MyController.java
+
++-+-+ 
++ Create and push tag
++-+-+ 
+	
++-+-+ 
++ Update local master branch, merge and push into feature branch
++-+-+ 
+	<path> folder1/forder2/
+	git checkout <path>/ABC-123-master
+	git pull
+	git checkout <path>/ABC-123-featureBranch
+	git pull origin <path>/ABC-123-master <-- auto_merge
+	git push origin <path>/ABC-123-featureBranch <-- push_specific_branch - git push <-- push into all tracked branches
+
