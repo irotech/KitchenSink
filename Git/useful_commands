@@ -15,6 +15,8 @@
 + Investigate changes on a particular file
 + Create and push tag
 + Update local master branch, merge and push into feature branch
++ Delete local branch
++ Delete remote branch
 +-+-+
 
 +-+-+
@@ -105,3 +107,14 @@
 	git pull origin <path>/ABC-123-master <-- auto_merge
 	git push origin <path>/ABC-123-featureBranch <-- push_specific_branch - git push <-- push into all tracked branches
 
++-+-+ 
++ Delete local branch 
++-+-+ 
+	git branch -d <branch_name>
+	OR
+	git branch -D <branch_name> (--force force delete un-merged branches)
+
++-+-+ 
++ Delete remote branch
++-+-+ 
+	git push origin --delete <branch_name>
