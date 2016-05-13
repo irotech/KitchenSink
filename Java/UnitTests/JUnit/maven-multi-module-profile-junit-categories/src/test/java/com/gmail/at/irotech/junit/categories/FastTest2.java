@@ -1,10 +1,10 @@
 package com.gmail.at.irotech.junit.categories;
 
-import com.gmail.at.irotech.junit.category.annotation.FastTest;
+import com.gmail.at.irotech.junit.suite.FastTests;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-@Category(FastTest.class)
+@Category(FastTests.class)
 public class FastTest2 {
 
     @Test

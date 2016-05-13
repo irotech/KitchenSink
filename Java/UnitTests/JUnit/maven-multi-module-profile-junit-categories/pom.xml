@@ -13,26 +13,25 @@
     </properties>
 
     <profiles>
-
         <profile>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <id>fast-test</id>
+            <id>all-tests</id>
             <properties>
-                <!--<exclude.tests>com.gmail.at.irotech.junit.categories.*</exclude.tests>-->
-                <exclude.tests>null</exclude.tests>
-                <include.tests>com.gmail.at.irotech.junit.categories.*.java</include.tests>
-                <testcase.groups>com.gmail.at.irotech.junit.category.annotation.FastTest</testcase.groups>
+                <test.categories>com.gmail.at.irotech.junit.suite.FastTests,com.gmail.at.irotech.junit.suite.IntegrationTests</test.categories>
             </properties>
         </profile>
         <profile>
-            <id>integration-test</id>
+            <id>fast-tests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
-                <!--<exclude.tests>com.gmail.at.irotech.junit.categories.*</exclude.tests>-->
-                <exclude.tests>null</exclude.tests>
-                <include.tests>com.gmail.at.irotech.junit.categories.*.java</include.tests>
-                <testcase.groups>com.gmail.at.irotech.junit.category.annotation.IntegrationTest</testcase.groups>
+                <test.categories>com.gmail.at.irotech.junit.suite.FastTests</test.categories>
+            </properties>
+        </profile>
+        <profile>
+            <id>integration-tests</id>
+            <properties>
+                <test.categories>com.gmail.at.irotech.junit.suite.IntegrationTests</test.categories>
             </properties>
         </profile>
     </profiles>
@@ -41,8 +40,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
-            <scope>test</scope>
+            <version>4.12</version>
         </dependency>
     </dependencies>
 
@@ -51,27 +49,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.12</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-junit47</artifactId>
-                        <version>2.12</version>
-                    </dependency>
-                </dependencies>
+                <version>2.19.1</version>
                 <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <excludes>
-                        <exclude>${exclude.tests}</exclude>
-                    </excludes>
+                    <groups>${test.categories}</groups>
                     <includes>
-                        <include>${include.tests}</include>
+                        <include>**/*.class</include>
                     </includes>
-                    <groups>${testcase.groups}</groups>
-                    <configuration>
-                        <forkMode>never</forkMode>
-                        <runOrder>random</runOrder>
-                    </configuration>
                 </configuration>
             </plugin>
             <plugin>
