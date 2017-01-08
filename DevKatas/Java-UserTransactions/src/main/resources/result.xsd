@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="2.0.1" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	jaxb:version="2.0" 
+	elementFormDefault="qualified">
+	<xs:element name="Result" type="Result">
+		<xs:annotation>
+			<xs:documentation>Root</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Result">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" ref="AverageTransaction" />
+			<xs:element minOccurs="0" maxOccurs="1" name="Customers" type="Customers" nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Customers">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="Customer" type="Customer" nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Customer">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" ref="Username" />
+			<xs:element minOccurs="1" maxOccurs="1" ref="AverageTransaction" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Username" type="NotEmptyString" nillable="false">
+		<xs:annotation>
+			<xs:documentation>not null customer username</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AverageTransaction" type="DecimalPrecision" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Value of average transaction with two decimal points of precision</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="NotEmptyString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DecimalPrecision">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

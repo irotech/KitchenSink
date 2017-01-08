@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+	<groupId>com.gmail.at.irotech</groupId>
+	<artifactId>devkatas</artifactId>
+	<version>1.0.0</version>
+	<name>devkatas-parent-pom</name>
+	<description>Global POM for common dependencies for devkatas projects</description>
+	<packaging>pom</packaging>
+
+    <modules>
+        <module>account-root</module>
+    </modules>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.jdk.version>1.8</project.build.jdk.version>
+
+<!--
+        <spring.version>4.0.4.RELEASE</spring.version>
+        <spring.security.version>3.2.4.RELEASE</spring.security.version>
+        <spring.batch.version>2.2.6.RELEASE</spring.batch.version>
+        <spring.integration.version>2.1.6.RELEASE</spring.integration.version>
+        <spring.ws.version>2.0.1.RELEASE</spring.ws.version>
+        <spring.test.version>3.2.8.RELEASE</spring.test.version>
+        <spring.rabbit.version>1.3.1.RELEASE</spring.rabbit.version>
+-->
+    </properties>
+<!-- to be filled with maven test coverage plugin
+    <profiles>
+        <profile>
+            <id>coverage-per-test</id>
+            <build>
+                <plugins>
+                    ...
+                </plugins>
+            </build>
+            <dependencies>
+                <dependency>
+                    ...
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+-->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>${project.build.jdk.version}</source>
+                        <target>${project.build.jdk.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <!-- for some reason we are picking up FE overlay this is the way to
+                            skip this. -->
+                        <!-- <overlays> <overlay> <groupId>uk.co.wowcher</groupId> <artifactId>frontend</artifactId>
+                            <skip>true</skip> </overlay> </overlays> -->
+                        <archive>
+                            <manifestEntries>
+                                <!--
+                                <Project-Built-By>${wowcher.built.by}</Project-Built-By>
+                                <Project-Build-Date>${wowcher.build.date}</Project-Build-Date>
+                                <Project-Release>${wowcher.release}</Project-Release>
+                                <Project-Version>${wowcher.version}</Project-Version>
+                                <Project-Build>${wowcher.build}</Project-Build>
+                                <Project-CommitBranch>${wowcher.commit.branch}</Project-CommitBranch>
+                                <Project-CommitId>${wowcher.commit.id}</Project-CommitId>
+                                <Project-commitIdAbbrev>${wowcher.commit.id.abbrev}</Project-commitIdAbbrev>
+                                <Project-Final-Name>${wowcher.final.name}</Project-Final-Name>
+                            -->
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
