@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>com.gmail.at.irotech</groupId>
-  <artifactId>maven-java-project</artifactId>
+  <artifactId>maven-java-standard-edition</artifactId>
   <packaging>jar</packaging>
   <version>1.0.1</version>
-  <name>maven-java-project</name>
+  <name>maven-java-standard-edition</name>
 
   <dependencies>
     <dependency>
