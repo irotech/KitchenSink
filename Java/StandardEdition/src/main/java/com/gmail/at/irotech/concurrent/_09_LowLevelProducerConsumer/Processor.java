@@ -16,7 +16,7 @@ import java.util.Random;
 @SuppressWarnings("InfiniteLoopStatement")
 public class Processor {
 
-    private LinkedList<Integer> list = new LinkedList<>();
+    private LinkedList<Integer> list = new LinkedList();
     private final int LIMIT = 10;
     private final Object lock = new Object();
 

@@ -1,4 +1,4 @@
-package WaitAndNotify_8;
+package com.gmail.at.irotech.concurrent._08_WaitAndNotify;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -103,7 +103,7 @@ class BlockingQueue<T> {
 public class BlockingQueueApp {
 
     public static void main(String[] args) throws InterruptedException {
-        final BlockingQueue<Integer> blockingQueue = new BlockingQueue<>(10);
+        final BlockingQueue<Integer> blockingQueue = new BlockingQueue(10);
         final Random random = new Random();
         Thread t1 = new Thread(new Runnable() {
             public void run() {

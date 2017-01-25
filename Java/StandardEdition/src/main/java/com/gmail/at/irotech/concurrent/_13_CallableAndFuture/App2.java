@@ -17,7 +17,7 @@ import java.util.concurrent.*;
 public class App2 {
 
     public static void main(String[] args) throws InterruptedException {
-        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList();
         ExecutorService executor = Executors.newCachedThreadPool();
         Future<Integer> future;
         for (int i = 1; i < 10; i++) {

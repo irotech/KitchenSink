@@ -17,8 +17,8 @@ class Worker implements Runnable {
     private Random random = new Random();
     private final Object lock1 = new Object();
     private final Object lock2 = new Object();
-    public List<Integer> list1 = new ArrayList<>();
-    public List<Integer> list2 = new ArrayList<>();
+    public List<Integer> list1 = new ArrayList();
+    public List<Integer> list2 = new ArrayList();
 
     @Override
     public void run() {

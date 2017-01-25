@@ -36,7 +36,7 @@ public class App {
      * which was designed to provide a higher level abstraction over
      * the wait/notify mechanism.
      */
-    private static BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);
+    private static BlockingQueue<Integer> queue = new ArrayBlockingQueue(10);
 
     public static void main(String[] args) throws InterruptedException {
 
