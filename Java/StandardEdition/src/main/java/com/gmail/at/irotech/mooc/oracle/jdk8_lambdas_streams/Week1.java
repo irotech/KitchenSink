@@ -15,16 +15,16 @@ public class Week1 {
    * Run the exercises to ensure we got the right answers
    */
   public void runExercises() {
-    System.out.println("JDK 8 Lambdas and Streams MOOC Lesson 1");
-    System.out.println("Running exercise 1 solution...");
+    System.out.println("\nJDK 8 Lambdas and Streams MOOC Lesson 1");
+    System.out.println("\nRunning exercise 1 solution...");
     exercise1();
-    System.out.println("Running exercise 2 solution...");
+    System.out.println("\nRunning exercise 2 solution...");
     exercise2();
-    System.out.println("Running exercise 3 solution...");
+    System.out.println("\nRunning exercise 3 solution...");
     exercise3();
-    System.out.println("Running exercise 4 solution...");
+    System.out.println("\nRunning exercise 4 solution...");
     exercise4();
-    System.out.println("Running exercise 5 solution...");
+    System.out.println("\nRunning exercise 5 solution...");
     exercise5();
   }
 
@@ -41,8 +41,7 @@ public class Week1 {
    * of Strings provided.
    */
   private void exercise1() {
-    List<String> list = Arrays.asList(
-        "alpha", "bravo", "charlie", "delta", "echo", "foxtrot");
+    List<String> list = Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot");
     StringBuilder sb = new StringBuilder();
     list.forEach(i -> sb.append(i.charAt(0)));
     System.out.println(sb);
@@ -54,12 +53,10 @@ public class Week1 {
    * Remove the words that have odd lengths from the list.
    */
   private void exercise2() {
-    List<String> list = new ArrayList<>(Arrays.asList(
-        "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
+    List<String> list = new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
     list.removeIf(i -> i.length() % 2 != 0);
-    //list.removeIf(s -> (s.length() & 1) == 1);
-    System.out.println(list.toString());
-    //list.forEach(System.out::println);
+//    list.removeIf(s -> (s.length() & 1) == 1);
+    list.forEach(System.out::println);
   }
 
   /**
@@ -68,12 +65,10 @@ public class Week1 {
    * Replace every word in the list with its upper case equivalent.
    */
   private void exercise3() {
-    List<String> list = new ArrayList<>(Arrays.asList(
-        "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
-    list.replaceAll(i -> i.toUpperCase());
-    //list.replaceAll(String::toUpperCase);
-    System.out.println(list.toString());
-    //list.forEach(System.out::println);
+    List<String> list = new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
+    list.replaceAll(String::toUpperCase);
+//    System.out.println(list.toString());
+    list.forEach(System.out::println);
   }
 
   /**
@@ -100,11 +95,11 @@ public class Week1 {
    */
   private void exercise5() {
     List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    Runnable task = () -> {
-      list.forEach(System.out::print);
-    };
-    task.run();
-    //new Thread(() -> list.forEach(System.out::println)).start();
+//    Runnable task = () -> {
+//      list.forEach(System.out::print);
+//    };
+//    task.run();
+    new Thread(() -> list.forEach(System.out::println)).start();
   }
 
   /**

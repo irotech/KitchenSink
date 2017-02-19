@@ -49,10 +49,8 @@ public class Week3 {
      */
     static <T> T measure(String label, Supplier<T> supplier) {
         T result = null;
-
         for (int i = 0; i < RUN_COUNT; i++)
             result = measureOneRun(label, supplier);
-
         return result;
     }
 

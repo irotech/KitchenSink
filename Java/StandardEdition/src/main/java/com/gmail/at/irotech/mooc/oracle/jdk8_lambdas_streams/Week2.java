@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -30,20 +31,20 @@ public class Week2 {
      * @throws IOException
      */
     public void runExercises() throws IOException {
-        System.out.println("JDK 8 Lambdas and Streams MOOC Lesson 2");
-        System.out.println("Running exercise 1 solution...");
+        System.out.println("\nJDK 8 Lambdas and Streams MOOC Lesson 2");
+        System.out.println("\nRunning exercise 1 solution...");
         exercise1();
-        System.out.println("Running exercise 2 solution...");
+        System.out.println("\nRunning exercise 2 solution...");
         exercise2();
-        System.out.println("Running exercise 3 solution...");
+        System.out.println("\nRunning exercise 3 solution...");
         exercise3();
-        System.out.println("Running exercise 4 solution...");
+        System.out.println("\nRunning exercise 4 solution...");
         exercise4();
-        System.out.println("Running exercise 5 solution...");
+        System.out.println("\nRunning exercise 5 solution...");
         exercise5();
-        System.out.println("Running exercise 6 solution...");
+        System.out.println("\nRunning exercise 6 solution...");
         exercise6();
-        System.out.println("Running exercise 7 solution...");
+        System.out.println("\nRunning exercise 7 solution...");
         exercise7();
     }
 
@@ -54,8 +55,7 @@ public class Week2 {
      * lower case and print them out.
      */
     private void exercise1() {
-        List<String> list = Arrays.asList(
-                "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
+        List<String> list = Arrays.asList("The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
 //    list.stream().forEach(item -> System.out.println(item.toLowerCase()));
         List<String> nList = list.stream().map(String::toLowerCase).collect(Collectors.toList());
         nList.forEach(System.out::println);
@@ -68,12 +68,11 @@ public class Week2 {
      * odd length
      */
     private void exercise2() {
-        List<String> list = Arrays.asList(
-                "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
-//    list.stream().filter(item -> item.length() % 2 > 0).forEach(System.out::println);
+        List<String> list = Arrays.asList("The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
         List<String> nList = list.stream()
                 .filter(i -> i.length() % 2 == 1)
-                .map(String::toLowerCase).collect(Collectors.toList());
+                .map(String::toLowerCase)
+                .collect(Collectors.toList());
         nList.forEach(System.out::println);
     }
 
@@ -84,10 +83,11 @@ public class Week2 {
      * where each word is separated by a hyphen (-). Print the resulting string.
      */
     private void exercise3() {
-        List<String> list = Arrays.asList(
-                "The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog");
-//    list.stream().skip(1).limit(3).forEach(item -> System.out.print(item+"-"));
-        String retVal = list.stream().skip(1).limit(3).collect(Collectors.joining("-"));
+        List<String> list = Arrays.asList("The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog");
+        String retVal = list.stream()
+                .skip(1)
+                .limit(3)
+                .collect(Collectors.joining("-"));
         System.out.println(retVal);
     }
 
@@ -115,7 +115,8 @@ public class Week2 {
 //                      .collect(Collectors.toList());
 //      System.out.println(list);
             List<String> uList = reader.lines().flatMap(line -> Stream.of(line.split(WORD_REGEXP)))
-                    .distinct().collect(Collectors.toList());
+                    .distinct()
+                    .collect(Collectors.toList());
             uList.forEach(System.out::println);
         }
     }
@@ -128,8 +129,12 @@ public class Week2 {
     private void exercise6() throws IOException {
         try (BufferedReader reader = Files.newBufferedReader(
                 Paths.get(resource.getPath()), StandardCharsets.UTF_8)) {
-            List<String> uList = reader.lines().flatMap(line -> Stream.of(line.split(WORD_REGEXP)))
-                    .map(String::toLowerCase).distinct().sorted().collect(Collectors.toList());
+            List<String> uList = reader.lines()
+                    .flatMap(line -> Stream.of(line.split(WORD_REGEXP)))
+                    .map(String::toLowerCase)
+                    .distinct()
+                    .sorted()
+                    .collect(Collectors.toList());
             uList.forEach(System.out::println);
         }
     }
@@ -140,8 +145,13 @@ public class Week2 {
     private void exercise7() throws IOException {
         try (BufferedReader reader = Files.newBufferedReader(
                 Paths.get(resource.getPath()), StandardCharsets.UTF_8)) {
-            List<String> uList = reader.lines().flatMap(line -> Stream.of(line.split(WORD_REGEXP)))
-                    .map(String::toLowerCase).distinct().sorted((o1, o2) -> o1.length() - o2.length()).collect(Collectors.toList());
+            List<String> uList = reader.lines()
+                    .flatMap(line -> Stream.of(line.split(WORD_REGEXP)))
+                    .map(String::toLowerCase)
+                    .distinct()
+                    .sorted((o1, o2) -> o1.length() - o2.length())
+//                    .sorted(Comparator.comparingInt(t -> t.length()))
+                    .collect(Collectors.toList());
             uList.forEach(System.out::println);
         }
     }
