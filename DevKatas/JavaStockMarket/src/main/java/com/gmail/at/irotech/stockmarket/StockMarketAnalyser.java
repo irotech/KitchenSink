@@ -15,15 +15,16 @@ public class StockMarketAnalyser {
 
     final String INPUT_SEPARATOR = ",";
     final String OUTPUT_SEPARATOR = "|";
+    final String INSUFFICIENT_VALUES = "insufficient-market-values";
 
     void analyse(String inputFileName, String outputFileName) {
-        System.out.println("Analysing Stock Market from the source " + inputFileName);
+        System.out.println("Analysing Stock Market from the source " + basePath.toString() + File.separator + (inputFileName));
         try {
             final Map<String, String[]> stringMap = fileReader(inputFileName);
             List<String> marketAnalysisResults = new ArrayList<>();
             stringMap.forEach((k, v) -> marketAnalysisResults.add(analyseProduct(k, v)));
             fileWriter(outputFileName, marketAnalysisResults);
-            System.out.println("Stock Market Analysis produced. Please check the " + outputFileName + " file out.");
+            System.out.println("Stock Market Analysis produced. Please check " + basePath.toString() + File.separator + outputFileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,14 +43,49 @@ public class StockMarketAnalyser {
 
     String analyseProduct(String productName, String... marketValues) {
         StringBuilder analysisBuilder = new StringBuilder(productName).append(OUTPUT_SEPARATOR);
+        if(marketValues.length < 2) {
+            return analysisBuilder.append(INSUFFICIENT_VALUES).toString();
+        }
+
         int buy = 0;
         int sell = 0;
         int profit = 0;
 
-        Arrays.stream(marketValues).forEach(val -> {
-            
-        });
+        int minVal = 0;
+        int minIndex = 0;
 
+        Map<Integer, Integer[]> marketOperationsMap = new HashMap<>();
+
+        for(int i = 0; i < marketValues.length; i++) {
+            Integer currentVal = 0;
+            try {
+                currentVal = Integer.parseInt(marketValues[i]);
+            } catch (NumberFormatException e) {
+                continue;
+            }
+            int currentProfit = 0;
+            if(i == 0) {
+                minVal = currentVal.intValue();
+            } else {
+                if(currentVal.intValue() > minVal) {
+                    currentProfit = currentVal.intValue() - minVal;
+                    if(currentProfit > profit) {
+                        profit = currentProfit;
+                        marketOperationsMap.put(currentProfit, new Integer[] {(minIndex==0)?1:minIndex, i+1});
+                    }
+                } else {
+                    minVal = currentVal.intValue();
+                    minIndex = i + 1;
+                }
+            }
+        }
+
+        profit = marketOperationsMap.keySet().stream().reduce(Integer::max).orElse(0).intValue();
+        final Integer[] indexes = marketOperationsMap.get(profit);
+        if(null != indexes && indexes.length > 0) {
+            buy = indexes[0].intValue();
+            sell = indexes[1].intValue();
+        }
         analysisBuilder.append(String.valueOf(buy)).append(OUTPUT_SEPARATOR);
         analysisBuilder.append(String.valueOf(sell)).append(OUTPUT_SEPARATOR);
         analysisBuilder.append(String.valueOf(profit));

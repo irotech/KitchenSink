@@ -62,7 +62,7 @@ Maven - build the project
 
 4) Create the input file and place it into the "user-home"/downloads folder
     linux - ~/Downloads OR /home/<user>/Downloads
-    MacOS - /Users/<user>/Downloads
+    MacOS - /Users/<user>/downloads
     Windows - C:\Users\<user>\Downloads
 
 5) Execute the project (java -jar <JAR-location> <inputFileName> <outputFileName>)

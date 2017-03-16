@@ -63,13 +63,13 @@ public class StockMarketAnalyserTest {
     }
 
     @Test
-    public void analyseProductWithOnlyTwoMarketValuesWithoutProfit() throws Exception {
+    public void analyseProductWithOnlyTwoMarketValuesWithProfit() throws Exception {
         final String retVal = stockMarketAnalyser.analyseProduct("PROD", new String[]{"1","3"});
-        assertEquals("PROD|1|3|2|", retVal);
+        assertEquals("PROD|1|2|2", retVal);
     }
 
     @Test
-    public void analyseProductWithOnlyTwoMarketValuesWithProfit() throws Exception {
+    public void analyseProductWithOnlyTwoMarketValuesWithoutProfit() throws Exception {
         final String retVal = stockMarketAnalyser.analyseProduct("PROD", new String[]{"3","1"});
         assertEquals(DEFAULT_VALUE, retVal);
     }
@@ -94,8 +94,8 @@ public class StockMarketAnalyserTest {
 
     @Test
     public void analyseProductWithOneInvalidValue() throws Exception {
-        final String retVal = stockMarketAnalyser.analyseProduct("PROD", new String[]{"1","x","3"});
-        assertEquals("PROD|insufficient-market-values", retVal);
+        final String retVal = stockMarketAnalyser.analyseProduct("PROD", new String[]{"1","x"});
+        assertEquals(DEFAULT_VALUE, retVal);
     }
 
     @Test
