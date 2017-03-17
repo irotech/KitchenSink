@@ -42,7 +42,7 @@ public class StockMarketAnalyser {
     }
 
     String analyseProduct(String productName, String... marketValues) {
-        StringBuilder analysisBuilder = new StringBuilder(productName).append(OUTPUT_SEPARATOR);
+        StringBuilder analysisBuilder = new StringBuilder(productName.replace("\"", "")).append(OUTPUT_SEPARATOR);
         if(marketValues.length < 2) {
             return analysisBuilder.append(INSUFFICIENT_VALUES).toString();
         }
