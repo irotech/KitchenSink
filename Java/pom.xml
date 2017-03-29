@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+    
+	<groupId>com.gmail.at.irotech</groupId>
+	<artifactId>Java</artifactId>
+	<version>1.0.1</version>
+	<name>java</name>
+	<description>General POM for Java projects</description>
+	<packaging>pom</packaging>
+
+	<parent>
+        <groupId>com.gmail.at.irotech</groupId>
+        <artifactId>kitchen-sink</artifactId>
+       	<version>1.0.1</version>
+		<relativePath>../pom.xml</relativePath>
+    </parent>
+	
+	<modules>
+		<module>StandardEdition</module>
+	</modules>
+
+</project>

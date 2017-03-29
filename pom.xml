@@ -18,6 +18,7 @@
   </organization>
 
   <modules>
+    <module>Java</module>
     <module>DevKatas</module>
   </modules>
 
