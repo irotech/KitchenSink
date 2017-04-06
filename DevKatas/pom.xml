@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -8,7 +7,7 @@
 	<artifactId>DevKatas</artifactId>
 	<version>1.0.1</version>
 	<name>devKatas</name>
-	<description>Global POM for common dependencies for devkatas projects</description>
+	<description>Global POM for common dependencies for dev katas projects</description>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -20,6 +19,7 @@
 	
 	<modules>
 		<module>JavaStockMarket</module>
+		<module>JavaFlightsSearch</module>
 	</modules>
 
 </project>
