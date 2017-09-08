@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   	<modelVersion>4.0.0</modelVersion>
     
-	<groupId>com.gmail.at.irotech</groupId>
-	<artifactId>DevKatas</artifactId>
+	<groupId>com.gmail.at.irotech.katas</groupId>
+	<artifactId>devKatas</artifactId>
 	<version>1.0.1</version>
 	<name>devKatas</name>
 	<description>Global POM for common dependencies for dev katas projects</description>
@@ -20,6 +20,7 @@
 	<modules>
 		<module>JavaStockMarket</module>
 		<module>JavaFlightsSearch</module>
+		<module>JavaRoboHoover</module>
 	</modules>
 
 </project>

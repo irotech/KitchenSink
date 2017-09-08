@@ -28,10 +28,10 @@ services-context.xml
 
 aop-context.xml
 	...
-	<bean id="persitentEntityCacheAspect" class="uk.co.wowcher.entitycache.aspect.PersistentEntityCacheAspect">
+	<bean id="persitentEntityCacheAspect" class="uk.co.x.entitycache.aspect.PersistentEntityCacheAspect">
 		<property name="sessionFactory" ref="sessionFactory"/>
 		<property name="config" ref="threadLocalCacheConfig"/>
 	</bean>
 	
-	<bean id="threadLocalCacheConfig" class="uk.co.wowcher.entitycache.config.ThreadLocalCacheConfig"/>
+	<bean id="threadLocalCacheConfig" class="uk.co.x.entitycache.config.ThreadLocalCacheConfig"/>
 

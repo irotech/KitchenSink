@@ -59,15 +59,15 @@
                   </manifest>
                   <manifestEntries>
                   <!--
-                  <Project-Built-By>${wowcher.built.by}</Project-Built-By>
-                  <Project-Build-Date>${wowcher.build.date}</Project-Build-Date>
-                  <Project-Release>${wowcher.release}</Project-Release>
-                  <Project-Version>${wowcher.version}</Project-Version>
-                  <Project-Build>${wowcher.build}</Project-Build>
-                  <Project-CommitBranch>${wowcher.commit.branch}</Project-CommitBranch>
-                  <Project-CommitId>${wowcher.commit.id}</Project-CommitId>
-                  <Project-commitIdAbbrev>${wowcher.commit.id.abbrev}</Project-commitIdAbbrev>
-                  <Project-Final-Name>${wowcher.final.name}</Project-Final-Name>
+                  <Project-Built-By>${irotech.built.by}</Project-Built-By>
+                  <Project-Build-Date>${irotech.build.date}</Project-Build-Date>
+                  <Project-Release>${irotech.release}</Project-Release>
+                  <Project-Version>${irotech.version}</Project-Version>
+                  <Project-Build>${irotech.build}</Project-Build>
+                  <Project-CommitBranch>${irotech.commit.branch}</Project-CommitBranch>
+                  <Project-CommitId>${irotech.commit.id}</Project-CommitId>
+                  <Project-commitIdAbbrev>${irotech.commit.id.abbrev}</Project-commitIdAbbrev>
+                  <Project-Final-Name>${irotech.final.name}</Project-Final-Name>
                   -->
                   </manifestEntries>
                 </archive>
