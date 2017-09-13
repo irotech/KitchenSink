@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gmail.at.irotech.katas.java</groupId>
-    <artifactId>JavaStockMarket</artifactId>
+    <artifactId>javaStockMarket</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
 
-    <name>devKata-stockMarketDemo</name>
+    <name>devKata-stockMarket</name>
     <description>Stock Market Demo Project</description>
 
     <parent>

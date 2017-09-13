@@ -8,12 +8,12 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>playRoboHoover</name>
-    <description>playRoboHoover</description>
+    <name>devKata-javaRoboHooverPlay</name>
+    <description></description>
 
     <parent>
         <groupId>com.gmail.at.irotech.katas</groupId>
-        <artifactId>JavaRoboHoover</artifactId>
+        <artifactId>javaRoboHoover</artifactId>
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>

@@ -4,14 +4,17 @@
   	<modelVersion>4.0.0</modelVersion>
     
 	<groupId>com.gmail.at.irotech.katas</groupId>
-	<artifactId>JavaRoboHoover</artifactId>
+	<artifactId>javaRoboHoover</artifactId>
 	<version>1.0.0</version>
-	<packaging>jar</packaging>
+    <packaging>pom</packaging>
+
+	<name>devKata-javaRoboHoover</name>
+	<description></description>
 	
 	<modules>
-		<module>PlayRoboHoover</module>
-		<module>SpringRoboHoover</module>
-		<module>VertxRoboHoover</module>
+		<module>playRoboHoover</module>
+		<module>springRoboHoover</module>
+		<module>vertxRoboHoover</module>
 	</modules>
 
 </project>

@@ -8,8 +8,8 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>springRoboHoover</name>
-    <description>springRoboHoover</description>
+    <name>devKata-javaRoboHooverSpring</name>
+    <description></description>
 
     <!-- parent>
         <groupId>com.gmail.at.irotech.katas</groupId>

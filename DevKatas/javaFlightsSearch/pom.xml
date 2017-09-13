@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gmail.at.irotech.java</groupId>
-    <artifactId>JavaFlightsSearch</artifactId>
+    <artifactId>javaFlightsSearch</artifactId>
     <version>1.1</version>
     <packaging>jar</packaging>
 
-    <name>devKata-flightsSearchDemo</name>
+    <name>devKata-flightsSearch</name>
     <description>Flights Search Spring Boot Demo Project</description>
 
     <parent>

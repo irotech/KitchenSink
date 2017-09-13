@@ -6,9 +6,10 @@
 	<groupId>com.gmail.at.irotech.katas</groupId>
 	<artifactId>devKatas</artifactId>
 	<version>1.0.1</version>
+	<packaging>pom</packaging>
+
 	<name>devKatas</name>
 	<description>Global POM for common dependencies for dev katas projects</description>
-	<packaging>pom</packaging>
 
 	<parent>
         <groupId>com.gmail.at.irotech</groupId>
@@ -18,9 +19,9 @@
     </parent>
 	
 	<modules>
-		<module>JavaStockMarket</module>
-		<module>JavaFlightsSearch</module>
-		<module>JavaRoboHoover</module>
+		<module>javaStockMarket</module>
+		<module>javaFlightsSearch</module>
+		<module>javaRoboHoover</module>
 	</modules>
 
 </project>
