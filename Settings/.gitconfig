@@ -1,2 +1,19 @@
-[aliases]
-deleted = log --diff-filter=D --summary
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[user]
+        name = <github_user>
+        email = <github_user_email>
+[push]
+        default = current
+[core]
+        excludesfile = <user_local_path>/.gitignore_global
+[branch]
+    autosetuprebase = always
+[alias]
+    s = status
+    co = checkout
+    ec = config --global -e
+    sl = stash list
+    ss = "!f() { git stash show stash^{/$*} -p; }; f"
+    sa = "!f() { git stash apply stash^{/$*}; }; f"
+    squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
